@@ -1,42 +1,22 @@
-console.log("Hello");
-
 window.addEventListener("load", () => {
-    console.log("Loaded");
-
     const video = document.getElementById("video");
     const canvas = document.getElementById("canvas");
     const canvasContext = canvas.getContext('2d');
     const haxVideo = document.createElement("video");
-    // const haxVideo = document.getElementById("haxVideo");
+    const videoCard = document.getElementById("haxVideoCard");
+    videoCard.appendChild(haxVideo);
 
-    canvas.width = video.clientWidth;
-    canvas.height = video.clientHeight;
-
-    // haxVideo.width = video.clientWidth;
-    // haxVideo.height = video.clientHeight;
-    const stream = canvas.captureStream(60);
+    const stream = canvas.captureStream();
     haxVideo.srcObject = stream;
     haxVideo.muted = true;
-
-    stream.addEventListener("addtrack", () => {
-        console.log("AddTrack");
-    });
-
-    stream.addEventListener("removetrack", () => {
-        console.log("RemoveTrack");
-    });
-    
-    stream.addEventListener("active", () => {
-        console.log("Active");
-    });
-
-    stream.addEventListener("inactive", () => {
-        console.log("Inactive");
-    });
+    haxVideo.controls = true;
         
     video.addEventListener("play", async () => {
-        console.log("Played");
+        canvas.width = video.clientWidth;
+        canvas.height = video.clientHeight;
+
         canvasContext.drawImage(video, 0, 0, video.clientWidth, video.clientHeight);
+        canvas.toDataURL();
 
         let interval = setInterval(() => {
             if (!video.paused && !video.ended) {
@@ -47,13 +27,18 @@ window.addEventListener("load", () => {
         }, 1000 / 60);
         
         try {
-            console.log(haxVideo);
-
             await haxVideo.play();
             await haxVideo.requestPictureInPicture();
         } catch (error) {
-            console.log(error);
+            console.error(error);
         }
-        console.log("HaxVideo Played");
+    });
+
+    haxVideo.addEventListener("play", () => {
+        video.play();
+    });
+
+    haxVideo.addEventListener("pause", () => {
+        video.pause();
     });
 })

@@ -1,0 +1,27 @@
+fluent-card {
+    padding: 1em;
+    margin: 1em;
+    height: 250px + 1em;
+}
+
+fluent-divider {
+    margin: 1em 0;
+}
+
+#video {
+    height: 250px;
+}
+
+#canvas {
+    height: 250px;
+}
+
+.flex-container {
+    display: flex;
+    flex-direction: row;
+}
+
+body {
+    font-family: "roboto";
+}
+

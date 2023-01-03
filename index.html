@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <!-- https://developer.mozilla.org/en-US/docs/Web/HTTP/CSP -->
+    <!-- <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self'"> -->
+    <link rel="stylesheet" href="styles.css">
+    <!-- <script src="../../../js/third_party/webgl_teapot/webgl-utils.js"></script>
+    <script src="../../../js/third_party/webgl_teapot/webgl-debug.js"></script>
+    <script src="../../../js/third_party/webgl_teapot/matrix4x4.js"></script>
+    <script src="../../../js/third_party/webgl_teapot/cameracontroller.js"></script>
+    <script src="../../../js/third_party/webgl_teapot/teapot-streams.js"></script> -->
+    <script type="module" src="https://unpkg.com/@fluentui/web-components">
+        
+    </script><script src="main.js"></script>
+</head>
+
+<body>
+    <div id="app-header">
+        <h1>HaxTech - CanvasVideo Player</h1>
+        <fluent-divider /></fluent-divider>
+    </div>
+    <div id="app-body" class="flex-container">
+        <fluent-card>
+            <h2>Video</h2>
+            <video id="video" src="http://upload.wikimedia.org/wikipedia/commons/7/79/Big_Buck_Bunny_small.ogv" controls="true" disablePictureInPicture></video>
+        </fluent-card>
+        <fluent-card>
+            <h2> Canvas </h2>
+            <canvas id="canvas""></canvas>
+        </fluent-card>
+        <fluent-card>
+            <h2>HaxVideo</h2>
+            <video id="haxVideo""></video>
+        </fluent-card>
+    </div>
+
+</body>
+
+</html>

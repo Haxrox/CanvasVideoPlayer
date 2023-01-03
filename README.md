@@ -10,3 +10,7 @@ To create a custom PIP player
 [ ] Add play, seek, PIP, caption buttons to the canvas
 [ ] Add button "listeners" to the buttons in the canvas -> make sure this translates nicely to PIP
 [ ] Add subtitles to Canvas
+
+## Conditions
+Videos must be on the same origin to work
+https://stackoverflow.com/questions/29571274/canvas-that-created-from-video-raising-tainted-canvases-may-not-be-exported-e

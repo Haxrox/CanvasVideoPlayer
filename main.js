@@ -39,6 +39,7 @@ window.addEventListener("load", () => {
         }, 1000 / 60);
         
         try {
+            canvas.toDataURL();
             await haxVideo.play();
             await haxVideo.requestPictureInPicture();
         } catch (error) {

@@ -1,6 +1,9 @@
 # CanvasVideoPlayer
 HTML Canvas video player
 
+## Purpose
+To create a custom PIP player
+
 ## TODO
 [x] Display a video inside the canvas
 [x] Create a new video element that plays from whatever is in the canvas (for PIP)
